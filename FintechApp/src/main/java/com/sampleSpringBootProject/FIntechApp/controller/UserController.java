@@ -1,5 +1,6 @@
 package com.sampleSpringBootProject.FIntechApp.controller;
 
+import com.sampleSpringBootProject.FIntechApp.model.User;
 import com.sampleSpringBootProject.FIntechApp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
