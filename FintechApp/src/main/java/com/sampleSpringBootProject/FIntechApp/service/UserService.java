@@ -22,6 +22,7 @@ import java.util.Optional;
 @Service
 public class UserService {
 
+    @Autowired
     private final UserRepository userRepository;
 
     public UserService(UserRepository userRepository) {
@@ -29,6 +30,11 @@ public class UserService {
     }
 
     public User createUser(User user) {
+        // Basic validation
+        if (user.getName() == null || user.getEmail() == null || user.getPassword() == null) {
+            throw new IllegalArgumentException("Name, email, and password must not be null");
+        }
+
         return userRepository.save(user);
     }
 
